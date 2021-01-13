@@ -8,6 +8,7 @@ class Words extends Connect{
         $query = $this->connect()->query('SELECT * FROM Words');
         return $query;
     }
+    
 
 }
 

@@ -9,6 +9,7 @@ class RecoveryWords{
         $word = new Words();
         $words = array();
         $words["items"] = array();
+        $words["english"] = array();
 
         $res = $word->getWords();
 
@@ -28,6 +29,7 @@ class RecoveryWords{
             echo json_encode(array('mensaje' => 'No hay elementos'));
         }
     }
+    
 }
 
 ?>

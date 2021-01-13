@@ -3,15 +3,11 @@
 class Connect{
     private $host;
     private $db;
-    private $user;
-    private $password;
     private $charset;
 
     public function __construct(){
         $this->host     = 'localhost';
         $this->db       = 'ClasePOO';
-        $this->user     = 'SoyAdmin';
-        $this->password = "holamundo123";
         $this->charset  = 'utf8mb4';
     }
 
@@ -19,9 +15,9 @@ class Connect{
     function connect(){
     
         try{
-
+            $config = parse_ini_file('../../private/config.ini'); 
             $connection = "mysql:host=".$this->host.";dbname=" . $this->db . ";charset=" . $this->charset;
-            $pdo = new PDO($connection,$this->user,$this->password);
+            $pdo = new PDO($connection,$config['user'],$config['password']);
         
             return $pdo;
 
